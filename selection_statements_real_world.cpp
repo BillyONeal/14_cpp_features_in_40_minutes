@@ -6,10 +6,7 @@
 std::unique_ptr<int> get_value() {
     constexpr auto maxInt = static_cast<unsigned>(INT_MAX);
     const unsigned val = std::random_device{}();
-    if (val > maxInt) {
-        return {};
-    }
-
+    if (val > maxInt) { return {}; }
     return std::make_unique<int>(static_cast<int>(val));
 }
 
